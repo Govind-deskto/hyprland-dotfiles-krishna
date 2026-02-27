@@ -1,0 +1,91 @@
+# ╔══════════════════════════════════════════════╗
+# ║         Starship Prompt Configuration        ║
+# ╚══════════════════════════════════════════════╝
+
+add_newline = true
+
+format = """
+┌───────($username@$hostname) $git_branch$git_status
+│ $directory
+└───$character"""
+
+# ── USERNAME ──────────────────────────────────
+[username]
+show_always = true
+style_user = "bold green"
+style_root = "bold red"
+format = "[$user]($style)"
+
+# ── HOSTNAME ──────────────────────────────────
+[hostname]
+ssh_only = false
+format = "[$hostname]($style)"
+style = "bold green"
+
+# ── DIRECTORY (RED) ───────────────────────────
+[directory]
+style = "bold red"
+truncation_length = 3
+truncate_to_repo = false
+format = "[$path]($style)[$read_only]($read_only_style) "
+
+# ── PROMPT CHARACTER ──────────────────────────
+[character]
+success_symbol = "[\\$](bold green)"
+error_symbol = "[\\$](bold red)"
+
+# ── GIT BRANCH ────────────────────────────────
+[git_branch]
+symbol = " "
+style = "bold yellow"
+format = "[$symbol$branch]($style) "
+
+# ── GIT STATUS ────────────────────────────────
+[git_status]
+style = "bold yellow"
+format = "([$all_status$ahead_behind]($style))"
+conflicted = "⚡"
+ahead = "⇡${count}"
+behind = "⇣${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+untracked = "?"
+stashed = "📦"
+modified = "!"
+staged = "+"
+renamed = "»"
+deleted = "✘"
+
+# ── NODE.JS ───────────────────────────────────
+[nodejs]
+symbol = " "
+style = "bold green"
+format = "[$symbol($version)]($style) "
+
+# ── PYTHON ────────────────────────────────────
+[python]
+symbol = " "
+style = "bold yellow"
+format = "[$symbol($version)]($style) "
+
+# ── PACKAGE VERSION ───────────────────────────
+[package]
+symbol = "📦 "
+style = "bold orange"
+format = "[$symbol$version]($style) "
+
+# ── CMD DURATION ──────────────────────────────
+[cmd_duration]
+min_time = 2_000
+style = "bold yellow"
+format = "[ $duration]($style) "
+
+# ── TIME ──────────────────────────────────────
+[time]
+disabled = false
+style = "bold white"
+format = "[$time]($style) "
+time_format = "%H:%M"
+
+# ── LINE BREAK ────────────────────────────────
+[line_break]
+disabled = true

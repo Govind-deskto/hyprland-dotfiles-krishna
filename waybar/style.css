@@ -1,0 +1,192 @@
+/* ============================================================
+   Waybar Style — Hyprland
+   Theme: Dark Rounded, Clean & Minimal
+   ============================================================ */
+
+/* ── Font & Base Variables ── */
+* {
+    font-family: "JetBrainsMono Nerd Font", "Noto Sans", monospace;
+    font-size: 13px;
+    border: none;
+    
+    /* background-color: rgb(59, 59, 59); */
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+    min-height: 1px;
+}
+
+/* ── Color Palette ── */
+/* Background: deep dark charcoal */
+/* Accent: soft blue-purple */
+/* Text: off-white */
+
+/* ── Main Bar ── */
+window#waybar {
+    background: transparent;
+    border-radius: 10px;
+    /* color: #cdd6f4; */
+    /* transition: background 0.2s ease-in; */
+    /* border: 20px solid rgba(100, 100, 140, 0.3); */
+    /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); */
+    /* margin: 1px; */
+
+}
+
+/* ── Tooltip ── */
+tooltip {
+    background: rgba(20, 20, 30, 0.95);
+    border-radius: 10px;
+    border: 1px solid rgba(100, 100, 160, 0.4);
+    color: #cdd6f4;
+}
+
+tooltip label {
+    color: #cdd6f4;
+}
+
+/* ============================================================
+   WORKSPACES (CENTER)
+   ============================================================ */
+
+#workspaces {
+    background: rgba(30, 30, 45, 0.9);
+    border-radius: 20px;
+    border: 2px solid rgb(197, 175, 238);
+    padding: 1px 8px;
+    margin: 3px 0px;
+}
+#workspaces button {
+    padding: 2px 12px;
+    color: #ffffff;
+    background-color: transparent;
+    border-radius: 8px;
+    min-width: 28px;
+
+    transition:
+        background-color 0.50s ease-in-out;
+}
+
+
+#workspaces button:hover {
+    background: rgba(17, 195, 145, 0.396);
+    color: #cdd6f4;
+
+    box-shadow: none;
+}
+
+/* Active workspace — highlighted pill */
+#workspaces button.active {
+    background: rgba(22, 22, 23, 0.649);
+    color: #ea96c3;
+    border-radius: 12px;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(137, 180, 250, 0.3);
+
+}
+
+/* Urgent workspace — red accent */
+#workspaces button.urgent {
+    background: rgba(236, 9, 73, 0.718);
+    color: #f38ba8;
+    border-radius: 8px;
+    animation: blink 1s step-end infinite;
+}
+/* 
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0.5; }
+} */
+
+/* ============================================================
+   RIGHT MODULES — shared pill style
+   ============================================================ */
+
+#battery,
+#clock,
+#tray {
+    background: rgba(30, 30, 45, 0.9);
+    border-radius: 20px;
+    padding: 1px 10px;
+
+    margin: 1px 10px;
+    
+}
+
+
+#battery:hover,
+#clock:hover {
+    background: rgba(50, 50, 70, 0.95);
+}
+
+/* ── Battery States ── */
+#battery {
+    color: #a6e3a1;  /* green — healthy */
+}
+
+#battery.warning {
+    color: #f9e2af;  /* yellow — 30% */
+    background: rgba(249, 226, 175, 0.1);
+}
+
+#battery.critical {
+    color: #f38ba8;  /* red — 15% */
+    background: rgba(243, 139, 168, 0.1);
+    animation: blink 1.5s step-end infinite;
+}
+
+#battery.charging {
+    color: #89dceb;  /* cyan — charging */
+}
+
+/* ── Clock ── */
+#clock {
+    color: #cba6f7;  /* soft lavender */
+    font-weight: 500;
+}
+
+/* ── Tray ── */
+#tray {
+    /* padding: 4px 8px; */
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: rgba(243, 139, 168, 0.2);
+    border-radius: 8px;
+}
+
+
+/* ============================================================
+   LEFT MODULES — Custom Icons
+   ============================================================ */
+
+#custom-gpt,
+#custom-chrome,
+#custom-github,
+#custom-whatsapp,
+#custom-Launchpad {
+    background: rgb(44, 38, 38);
+    border-radius: 50px;
+    margin: 8px 3px;          /* ↑ vertical margin badha */
+    padding: 3px 5px;           /* ↓ vertical padding zero */
+    min-height: 0;            /* remove forced height */
+    /* line-height: 1;           text compress */
+    font-size: 11px;          /* thoda chhota */
+    min-width: 40px;
+    color: #1ca5db;
+    transition: all 0.1s ease;
+}
+
+#custom-gpt:hover,
+#custom-chrome:hover,
+#custom-whatsapp:hover,
+#custom-github:hover,
+#custom-Launchpad:hover {
+    background: rgba(21, 161, 86, 0.95);
+    color: #f4adf1;
+}

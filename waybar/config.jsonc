@@ -1,0 +1,124 @@
+{
+    // ========================================
+    //   Waybar Config — Hyprland
+    //   Layout: Left: empty | Center: workspaces | Right: battery, clock, tray
+    // ========================================
+
+    "layer": "top",
+    "position": "top",
+    "height": 2,
+    "spacing": 2,
+    "margin-bottom": 1,
+    // "margin-left": 1,
+    // "margin-right": 1,
+
+    // ── LEFT (empty — baad mein modules add karna yahan) ──
+    "modules-left": ["custom/Launchpad", "custom/gpt", "custom/chrome", "custom/github", "custom/whatsapp"],
+
+
+// -------Startups-----------
+// ── Custom Launchpad (Wofi) ──
+"custom/Launchpad": {
+    "format": "󰣇",
+    "tooltip": "Launchpad",
+    "on-click": "wofi --show drun --all-images"
+},
+
+
+// ── Custom GPT ──
+"custom/gpt": {
+    "format": "󰚩",
+    "tooltip": "ChatGPT",
+    "on-click": "google-chrome-stable  https://chat.openai.com   --new-window"
+},
+
+// ── Custom Chrome ──
+"custom/chrome": {
+    "format": "",
+    "tooltip": "Google Chrome",
+    "on-click": "google-chrome-stable  --new-window"
+},
+
+// ── Custom Whatsapp ──
+"custom/whatsapp": {
+    "format": "󰖣",
+    "tooltip": "Whatsapp",
+    "on-click": "/opt/google/chrome/google-chrome --profile-directory=Default --app-id=hnpfjngllnobngcgfapefoaidbinmjnm"
+},
+
+
+// ── Custom GitHub ──
+"custom/github": {
+    "format": "󰊤",
+    "tooltip": "GitHub",
+    "on-click": "google-chrome-stable  https://github.com/Govind-deskto  --new-window"
+},
+
+
+
+
+
+
+
+
+    // ── CENTER (workspaces) ──
+    "modules-center": ["hyprland/workspaces"],
+
+    // ── RIGHT (battery, clock, tray) ──
+    "modules-right": ["battery", "clock", "tray"],
+
+    // ============================================================
+    //   MODULE CONFIGS
+    // ============================================================
+
+    // ── Hyprland Workspaces ──
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "active-only": false,
+        "on-click": "activate",
+        "format": "{icon}",
+        "format-icons": {
+            "1": "󰎤",
+            "2": "󰎧",
+            "3": "󰎪",
+            "4": "󰎭",
+            "5": "󰎱",
+            "urgent": "󱐋",
+            "active": "x",
+            "default": "󰊠"
+        },
+        "persistent-workspaces": {
+            "*": [1, 2, 3, 4, 5]
+        }
+    },
+
+    // ── Battery ──
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-plugged": "󰚥 {capacity}%",
+        "format-alt": "{icon} {time}",
+        "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "tooltip-format": "{timeTo} — {power:.1f}W"
+    },
+
+    // ── Clock ──
+    "clock": {
+        "timezone": "Asia/Kolkata",
+        "tooltip-format": "<big>{:%A, %d %B %Y}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "󰥔 {:%H:%M}",
+        "format-alt": "󰃭 {:%d %b %Y}"
+    },
+
+    // ── System Tray ──
+    "tray": {
+        "icon-size": 16,
+        "spacing": 8
+    }
+}

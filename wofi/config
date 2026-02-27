@@ -1,0 +1,7 @@
+width=500
+height=300
+location=center
+show=drun
+allow_images=true
+prompt=What the hell u r searcing...
+gtk_dark=true
