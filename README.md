@@ -15,10 +15,11 @@ productive Wayland desktop.
 
 <p align="center">
   <img src="assets/preview.png" width="45%">
-  <img src="assets/preview2.png" width="45%">
+  <img src="assets/preview3.png" width="45%">
 </p>
 <p>
-  <img src="assets/preview3.png" width="45%">
+  <img src="assets/preview2.png" width="45%">
+  <img src="assets/preview4.png" width="45%">
     
 </p>
 
